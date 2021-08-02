@@ -29,3 +29,6 @@ Submissions are scored on the root mean squared error. RMSE is very common and i
 
 
 where y hat is the predicted value and y is the original value.
+
+# Link of Competition
+https://www.kaggle.com/c/facial-keypoints-detection/overview/evaluation
