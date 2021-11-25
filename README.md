@@ -8,16 +8,28 @@ The objective of this task is to predict keypoint positions on face images. This
 
 # Augmentations:-
 Used different augmentation techniques. The Critical part was to compute facial keypoints when image is augmented. 
-1. Rotation:-
 
-[d](Rotation.png)
+ **Rotation** ![hhh](Rotation.png)
+                      ![d](Brightness.png) **Alter BrightNess**
+# Model:-
+Fine tunned a pretrained MobileNet Model
+~~~
+model=tf.keras.models.Sequential([
+    tf.keras.layers.Conv2D(3,(1,1),padding='same',input_shape=(96,96,1)),
+    tf.keras.layers.LeakyReLU(alpha=0.1),
+    pretrained_model,
+    tf.keras.layers.GlobalAveragePooling2D(),
+    tf.keras.layers.Dropout(0.1),
+    tf.keras.layers.Dense(30)
+
+])
+~~~
+Model achieved a validation accuracy=93%
 
 
-# Root Mean Squared Error (RMSE)
-Submissions are scored on the root mean squared error. RMSE is very common and is a suitable general-purpose error metric. Compared to the Mean Absolute Error, RMSE punishes large errors:
 
 
-where y hat is the predicted value and y is the original value.
+
 
 # Link of Competition
 https://www.kaggle.com/c/facial-keypoints-detection/overview/evaluation
